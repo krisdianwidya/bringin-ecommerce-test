@@ -1,18 +1,7 @@
-import { useQuery } from "@tanstack/react-query";
-import axios from "axios";
 import { DataView } from "primereact/dataview";
-
 import CartItem from "./CartItem";
 
-const useFetchCartUser = () => {
-  return useQuery({
-    queryKey: ["userOneCarts"],
-    queryFn: async () => {
-      const { data } = await axios.get("https://fakestoreapi.com/carts/1");
-      return data;
-    },
-  });
-};
+import { useFetchCartUser } from "../hooks/useFetchCartUser";
 
 const CartsWrapper = () => {
   const { isLoading, data, error } = useFetchCartUser();
