@@ -42,7 +42,7 @@ const FilterByCategory = () => {
         onChange={(e) => setSelectedCategory(e.value)}
         options={allCategories}
         optionLabel="name"
-        placeholder="Select a City"
+        placeholder="Select a category"
         className="w-full md:w-14rem"
       />
     </div>
