@@ -18,7 +18,11 @@ const Header = () => {
     </div>
   );
 
-  const endContent = <Button icon="pi pi-shopping-cart" />;
+  const endContent = (
+    <Link to={"/cart"}>
+      <Button icon="pi pi-shopping-cart" />
+    </Link>
+  );
 
   return (
     <div className="card">
