@@ -8,9 +8,7 @@ const useFetchProducts = () => {
   return useQuery({
     queryKey: ["products"],
     queryFn: async () => {
-      const { data } = await axios.get(
-        "https://fakestoreapi.com/products?limit=15"
-      );
+      const { data } = await axios.get("https://fakestoreapi.com/products");
       return data;
     },
   });
