@@ -2,7 +2,7 @@ import { Button } from "primereact/button";
 import { Rating } from "primereact/rating";
 import { Tag } from "primereact/tag";
 
-const Product = ({ product }) => {
+const Product = ({ product, slotTemplate }) => {
   return (
     <div className="col-12 sm:col-6 lg:col-2 xl:col-4 p-2" key={product.id}>
       <div className="p-4 border-1 surface-border surface-card border-round">
@@ -18,7 +18,7 @@ const Product = ({ product }) => {
             className="shadow-2 border-round"
             src={product.image}
             alt={product.title}
-            style={{ height: "250px", width: "auto" }}
+            style={{ maxHeight: "250px", width: "auto" }}
           />
           <div className="text-2xl font-bold">{product.title}</div>
           <Rating value={product.rating.rate} readOnly cancel={false}></Rating>
@@ -30,6 +30,7 @@ const Product = ({ product }) => {
             className="p-button-rounded"
           ></Button>
         </div>
+        {slotTemplate}
       </div>
     </div>
   );

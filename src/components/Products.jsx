@@ -1,6 +1,8 @@
 import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 import { DataView } from "primereact/dataview";
+import { Button } from "primereact/button";
+import { Link } from "react-router-dom";
 
 import Product from "./Product";
 
@@ -23,7 +25,20 @@ const Products = () => {
 
   const listTemplate = (products) => {
     let renderedProducts = products.map((product) => {
-      return <Product product={product} />;
+      return (
+        <Product
+          product={product}
+          slotTemplate={
+            <Link to={`/products/${product.id}`}>
+              <Button
+                className="mt-2"
+                label="Go to detail"
+                size="small"
+              ></Button>
+            </Link>
+          }
+        />
+      );
     });
     return <div className="grid grid-nogutter">{renderedProducts}</div>;
   };

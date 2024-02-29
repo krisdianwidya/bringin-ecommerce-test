@@ -1,9 +1,14 @@
 import { Toolbar } from "primereact/toolbar";
 import { InputText } from "primereact/inputtext";
 import { Button } from "primereact/button";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const startContent = <h1 className="m-0">E-Commerce</h1>;
+  const startContent = (
+    <Link to={"/"}>
+      <h1 className="m-0 no-underline text-primary">E-Commerce</h1>
+    </Link>
+  );
 
   const centerContent = (
     <div className="p-inputgroup flex-1">
